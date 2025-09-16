@@ -1,0 +1,83 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #9a36e8;
+  --secondary: #e633b0;
+  --bg: #1a002a;
+  --text: #ffffff;
+  --font-main: 'Roboto Mono', monospace;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* Container principal do app */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+/* Botões padrão */
+button {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: white;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Links padrão */
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Parágrafos */
+p {
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.1rem;
+  }
+}

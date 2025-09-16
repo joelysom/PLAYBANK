@@ -1,0 +1,95 @@
+.register-container {
+  background: #0c0023;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.register-box {
+  background: transparent;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 380px;
+}
+
+.register-box h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #ff00aa;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+.btn-continuar {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #ff0057, #ff00aa);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-continuar:hover {
+  transform: scale(1.05);
+}
+
+.link-login {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.link-login a {
+  color: #ff00aa;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.help-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.help-box {
+  background: rgba(255, 0, 170, 0.15);
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.help-box p {
+  font-size: 14px;
+  color: #fff;
+}
+
+.mascote {
+  width: 120px;
+  margin-top: 10px;
+}

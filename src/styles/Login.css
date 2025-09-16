@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #1a002a;
+  color: white;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.login-header .logo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.bank-name {
+  font-size: 28px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 25px;
+}
+
+.login-form {
+  width: 80%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input {
+  background: transparent;
+  border: 1px solid #6b42d9;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  color: white;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.btn-login {
+  background: linear-gradient(90deg, #9a36e8, #e633b0);
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn-login:hover {
+  opacity: 0.9;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.options a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.options a:hover {
+  color: white;
+}
+
+.bot-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bot-img {
+  width: 120px;
+}
+
+.bot-msg {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.register {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.register a {
+  color: #e633b0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
