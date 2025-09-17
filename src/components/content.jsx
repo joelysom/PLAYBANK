@@ -7,8 +7,9 @@ import { BiSolidCoupon } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsPeopleFill } from "react-icons/bs";
 import { GiTwoCoins } from "react-icons/gi";
-import { FaShoppingCart, FaCreditCard } from "react-icons/fa";
+import { FaShoppingCart, FaCreditCard, FaCog } from "react-icons/fa";
 import { useAuth } from "../context/AuthContext.jsx";
+import { useNavigate } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useEffect } from "react";
 
@@ -26,6 +27,7 @@ const formatMoney = (value) => {
 
 const Content = () => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [userData, setUserData] = useState(null);
 
@@ -89,6 +91,9 @@ const Content = () => {
         <div className="logo-container">
           <img src={logo} alt="logo" className="logo" onClick={handleLogoClick} />
           <div className={`logout-menu ${showMenu ? 'show' : ''}`}>
+            <div className="menu-item" onClick={() => navigate('/config')}>
+              <FaCog /> Configurações
+            </div>
             <div className="menu-item" onClick={logout}>
               <FaSignOutAlt /> Sair
             </div>

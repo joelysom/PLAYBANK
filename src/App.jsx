@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Adminconsole from "./pages/AdminHome.jsx";
+import ConfigPage from "./pages/ConfigPage";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext.jsx";
@@ -21,7 +22,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/admin" element={< Adminconsole />} />
+            <Route path="/admin" element={<Adminconsole />} />
+            <Route path="/config" element={<ConfigPage />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
           <ToastContainer
