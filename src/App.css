@@ -32,8 +32,6 @@ body {
   width: 412px;
   min-width: 412px;
   max-width: 412px;
-  min-height: 915px;
-  max-height: 915px;
   margin: 0 auto;
   box-shadow: 0 0 24px 0 #0008;
   border-radius: 18px;
@@ -41,7 +39,10 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  /* overflow removido para permitir rolagem */
+  min-height: 0;
+  max-height: none;
+  height: auto;
 }
 
 @media (max-width: 412px) {
@@ -50,16 +51,18 @@ body {
     min-width: 100vw;
     max-width: 100vw;
     border-radius: 0;
-    min-height: 100vh;
-    max-height: 100vh;
+    min-height: 0;
+    max-height: none;
+    height: auto;
     box-shadow: none;
   }
 }
 
-@media (max-height: 915px) {
+@media (min-width: 413px) and (min-height: 915px) {
   .app {
-    min-height: 100vh;
-    max-height: 100vh;
+    min-height: 915px;
+    max-height: 915px;
+    height: 915px;
   }
 }
 

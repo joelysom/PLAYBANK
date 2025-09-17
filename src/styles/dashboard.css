@@ -7,9 +7,9 @@
   color: #0f1724;
   font-family: "Roboto Mono", monospace;
   margin: 0 auto;
-  /* min-height removido para permitir rolagem total */
+  min-height: 0;
   position: relative;
-  padding-bottom: 100px; /* Mais espaço para o bottom menu */
+  padding-bottom: 90px; /* Mais espaço para o bottom menu */
 }
 
 /* Responsive styles for different devices */

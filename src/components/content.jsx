@@ -86,7 +86,6 @@ const Content = () => {
 
   return (
     <div className="content">
-
       {/* Header */}
       <div className="header">
         <div className="logo-container">
@@ -189,15 +188,7 @@ const Content = () => {
       <div className="card"><img src={card0} alt="card 0" /></div>
       <h3 className="card-title">Ser PlayBank é saber que</h3>
       <div className="card"><img src={card1} alt="card 1" /></div>
-
-      {/* Bottom Menu */}
-      <div className="bottom-menu">
-        <AiOutlineHome className="active" />
-        <GiTwoCoins />
-        <BsPeopleFill />
-        <FaShoppingCart />
-        <FaHistory />
-      </div>
+      {/* Dashboard removido daqui */}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "../styles/home.css";
 import Content from "../components/content";
+import Dashboard from "../components/dashboard";
 import { useAuth } from "../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 
@@ -17,6 +18,7 @@ const Home = () => {
   return (
     <div className="home">
       <Content />
+      <Dashboard />
     </div>
   );
 };
