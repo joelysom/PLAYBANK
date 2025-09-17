@@ -6,6 +6,7 @@ import bot from "../assets/BOT.png";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { notifySuccess, notifyError } from "../utils/toast";
 
 
 export default function Login() {
@@ -18,8 +19,16 @@ export default function Login() {
     e.preventDefault();
     setError("");
     try {
+      if (email === "admin@admin.com" && password === "admin") {
+        // Login do admin (sem usar Firebase Auth)
+        notifySuccess("Login administrativo realizado com sucesso!");
+        navigate("/admin");
+        return;
+      }
+      
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Redireciona para Home após login
+      notifySuccess("Login realizado com sucesso!");
+      navigate("/home"); // Redireciona para Home após login
     } catch (err) {
       let msg = "Erro ao fazer login.";
       if (err.code === "auth/user-not-found" || err.code === "auth/wrong-password") {
@@ -27,6 +36,7 @@ export default function Login() {
       } else if (err.code === "auth/invalid-email") {
         msg = "E-mail inválido.";
       }
+      notifyError(msg);
       setError(msg);
     }
   };

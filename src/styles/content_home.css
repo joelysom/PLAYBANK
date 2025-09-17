@@ -81,9 +81,62 @@
   margin-bottom: 15px;
 }
 
+.logo-container {
+  position: relative;
+  cursor: pointer;
+}
+
 .logo {
   width: 45px;
   height: 45px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logout-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  min-width: 120px;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.logout-menu.show {
+  opacity: 1;
+  transform: translateY(5px);
+  visibility: visible;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #333;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f5f0ff;
+  color: #5d2bc0;
+}
+
+.menu-item svg {
+  font-size: 16px;
 }
 
 .user-info p {

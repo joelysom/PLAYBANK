@@ -28,7 +28,8 @@
   margin-bottom: 18px;
 }
 
-.input-group input {
+.input-group input,
+.input-group select {
   width: 100%;
   padding: 14px;
   border: 2px solid #ff00aa;
@@ -37,6 +38,18 @@
   color: #fff;
   font-size: 16px;
   outline: none;
+}
+
+.input-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ff00aa'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.input-group select option {
+  background: #0c0023;
+  color: #fff;
 }
 
 .input-group input::placeholder {
@@ -58,6 +71,38 @@
 
 .btn-continuar:hover {
   transform: scale(1.05);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-voltar {
+  flex: 1;
+  padding: 14px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #ff00aa;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-voltar:hover {
+  background: rgba(255, 0, 170, 0.1);
+}
+
+.location-group {
+  display: flex;
+  gap: 10px;
+}
+
+.location-group input {
+  flex: 1;
 }
 
 .link-login {

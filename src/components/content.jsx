@@ -1,18 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/content_home.css";
-import { FaRocket, FaPiggyBank, FaHistory } from "react-icons/fa";
+import "../styles/loading.css";
+import { FaRocket, FaPiggyBank, FaHistory, FaSignOutAlt } from "react-icons/fa";
 import { RiBankFill } from "react-icons/ri";
 import { BiSolidCoupon } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsPeopleFill } from "react-icons/bs";
 import { GiTwoCoins } from "react-icons/gi";
 import { FaShoppingCart, FaCreditCard } from "react-icons/fa";
+import { useAuth } from "../context/AuthContext.jsx";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { useEffect } from "react";
 
 import logo from "../assets/logomini.png";
 import card0 from "../assets/card_0.svg";
 import card1 from "../assets/card_1.svg";
 
+const formatMoney = (value) => {
+  if (typeof value !== 'number') return '0,00';
+  return value.toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+};
+
 const Content = () => {
+  const { user, logout } = useAuth();
+  const [showMenu, setShowMenu] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (user) {
+        try {
+          const db = getFirestore();
+          const userDoc = await getDoc(doc(db, "users", user.uid));
+          if (userDoc.exists()) {
+            console.log("Dados do usuário:", userDoc.data()); // Para debug
+            setUserData(userDoc.data());
+          } else {
+            console.log("Documento do usuário não encontrado");
+          }
+        } catch (error) {
+          console.error("Erro ao buscar dados do usuário:", error);
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [user]);
+  
+  const handleLogoClick = () => {
+    setShowMenu(!showMenu);
+  };
+
   const handleWheel = (e) => {
     if (e.deltaY !== 0) {
       e.preventDefault();
@@ -45,12 +86,30 @@ const Content = () => {
 
       {/* Header */}
       <div className="header">
-        <img src={logo} alt="logo" className="logo" />
+        <div className="logo-container">
+          <img src={logo} alt="logo" className="logo" onClick={handleLogoClick} />
+          <div className={`logout-menu ${showMenu ? 'show' : ''}`}>
+            <div className="menu-item" onClick={logout}>
+              <FaSignOutAlt /> Sair
+            </div>
+          </div>
+        </div>
         <div className="user-info">
-          <p>Sua Colocação: <span>7</span></p>
+          <p>Bem vindo, 
+            {!userData ? (
+              <span><div className="loading-shimmer" style={{width: "100px", display: "inline-block"}}></div></span>
+            ) : (
+              <span>{userData.apelido || userData.nomeCompleto}</span>
+            )}
+          </p>
           <p>
-            Seus PlayPoints: <span>5.875</span> 
-            <small>Termina em: 4h</small>
+            Seus PlayPoints: 
+            {!userData ? (
+              <span><div className="loading-shimmer" style={{width: "40px", display: "inline-block"}}></div></span>
+            ) : (
+              <span>0</span>
+            )}
+            <small>Conquiste mais pontos!</small>
           </p>
         </div>
       </div>
@@ -58,7 +117,11 @@ const Content = () => {
       {/* Saldo */}
       <div className="saldo">
         <p>Saldo em conta</p>
-        <h2>R$ 1.846,89</h2>
+        {!userData ? (
+          <h2><div className="loading-shimmer large"></div></h2>
+        ) : (
+          <h2>R$ {formatMoney(userData.saldo)}</h2>
+        )}
       </div>
 
       {/* Tabs */}
@@ -86,10 +149,25 @@ const Content = () => {
       {/* Fatura */}
       <div className="fatura">
         <p>Fatura</p>
-        <h2>R$ 432,90</h2>
-        <p className="detalhes">
-          Venc: <b>12/12</b> <span>|</span> Limite disponível: <b>2.500,00</b>
-        </p>
+        {!userData ? (
+          <>
+            <h2><div className="loading-shimmer large"></div></h2>
+            <p className="detalhes">
+              Venc: <b><div className="loading-shimmer" style={{width: "60px", display: "inline-block"}}></div></b>
+              <span>|</span>
+              Limite disponível: <b><div className="loading-shimmer" style={{width: "80px", display: "inline-block"}}></div></b>
+            </p>
+          </>
+        ) : (
+          <>
+            <h2>R$ {formatMoney(userData.fatura?.valor)}</h2>
+            <p className="detalhes">
+              Venc: <b>{userData?.fatura?.vencimento ? new Date(userData.fatura.vencimento.seconds * 1000).toLocaleDateString('pt-BR') : '--/--'}</b>
+              <span>|</span>
+              Limite disponível: <b>R$ {formatMoney(userData.limiteCredito)}</b>
+            </p>
+          </>
+        )}
       </div>
 
       {/* Shortcuts */}
