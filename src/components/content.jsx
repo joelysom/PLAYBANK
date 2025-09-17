@@ -100,6 +100,7 @@ const Content = () => {
 
       {/* Banners */}
       <div className="card"><img src={card0} alt="card 0" /></div>
+      <h3 className="card-title">Ser PlayBank é saber que</h3>
       <div className="card"><img src={card1} alt="card 1" /></div>
 
       {/* Bottom Menu */}
