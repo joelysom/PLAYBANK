@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/ConfigPage.css";
-import { FaUser, FaShieldAlt, FaGift, FaLock, FaQuestionCircle, FaSignOutAlt } from "react-icons/fa";
+import { FaUser, FaShieldAlt, FaGift, FaLock, FaQuestionCircle, FaSignOutAlt, FaHome } from "react-icons/fa";
 import BOT from "../assets/BOT.png";
 import { useAuth } from "../context/AuthContext.jsx";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
@@ -30,7 +30,7 @@ export default function ConfigPage() {
   }, [user]);
   return (
     <div className="config-container">
-      <header className="user-header">
+      <header className="user-header" style={{ position: 'relative' }}>
         <div className="user-avatar">
           {userData?.nomeCompleto?.charAt(0) || '👤'}
         </div>
@@ -40,6 +40,14 @@ export default function ConfigPage() {
           <p>agência 0001 Cc {user?.uid?.slice(-8) || '--------'} - 0</p>
           <span>@{userData?.apelido || 'usuario'}</span>
         </div>
+        <button
+          className="config-home-btn"
+          title="Ir para Home"
+          style={{ position: 'absolute', top: 10, right: 10, background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', fontSize: 28 }}
+          onClick={() => navigate('/home')}
+        >
+          <FaHome />
+        </button>
       </header>
 
       <main className="menu-options">
@@ -68,7 +76,7 @@ export default function ConfigPage() {
 
       <footer className="bopito-card">
         <img src={BOT} alt="Bopito" className="bopito-img" />
-        <button className="bopito-btn">Fale com Bopito</button>
+        <button className="bopito-btn" onClick={() => navigate('/bopito-chat')}>Fale com Bopito</button>
       </footer>
     </div>
   );

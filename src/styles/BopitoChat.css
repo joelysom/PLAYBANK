@@ -1,0 +1,136 @@
+.bopito-chat-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.bopito-chat-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* HEADER */
+.bopito-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #6a0dad, #32004b);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.bopito-back-btn, .bopito-home-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 0.3rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.bopito-back-btn:hover, .bopito-home-btn:hover {
+  color: #dcb2ff;
+}
+
+.bopito-chat-botimg {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 0.7rem;
+}
+
+/* MENSAGENS */
+.bopito-chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #f9f7fb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.bopito-msg {
+  max-width: 80%;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  word-break: break-word;
+}
+
+/* mensagem do usuário */
+
+.bopito-msg.user {
+  align-self: flex-end;
+  background: #fff;
+  color: #6a0dad;
+  border-bottom-right-radius: 4px;
+  font-family: 'Roboto Mono', monospace;
+  border: 1px solid #e1d5f7;
+}
+
+/* mensagem do bot */
+
+.bopito-msg.bot {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #9a36e8, #32004b);
+  color: #fff;
+  border-bottom-left-radius: 4px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* INPUT */
+.bopito-chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 0.7rem 1rem;
+  background: #f5f0fa;
+}
+
+.bopito-chat-input input {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+  margin-right: 0.7rem;
+  color: #32004b;
+}
+
+.bopito-chat-input button {
+  background: linear-gradient(135deg, #9a36e8, #32004b);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.bopito-chat-input button:hover {
+  opacity: 0.9;
+}
+.bopito-chat-input button:disabled {
+  background: #bba0d8;
+  cursor: not-allowed;
+}

@@ -1,12 +1,12 @@
+
+/* Layout fixo para simular celular Samsung Galaxy (412x915) */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color-scheme: dark;
+  color: #fff;
+  background: #1a002a;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,35 +24,53 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  background: #1a002a;
+  min-width: 100vw;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Centraliza e fixa o app no tamanho de um celular Samsung Galaxy (412x915) */
+.app {
+  width: 412px;
+  min-width: 412px;
+  max-width: 412px;
+  min-height: 915px;
+  max-height: 915px;
+  margin: 0 auto;
+  box-shadow: 0 0 24px 0 #0008;
+  border-radius: 18px;
+  background: #1a002a;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+@media (max-width: 412px) {
+  .app {
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
+    min-height: 100vh;
+    max-height: 100vh;
+    box-shadow: none;
+  }
 }
-button:hover {
-  border-color: #646cff;
+
+@media (max-height: 915px) {
+  .app {
+    min-height: 100vh;
+    max-height: 100vh;
+  }
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
+
+
+
 
 @media (prefers-color-scheme: light) {
   :root {

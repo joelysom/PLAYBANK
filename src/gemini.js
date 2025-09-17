@@ -1,20 +1,17 @@
-export GOOGLE_GENAI_API_KEY=<AIzaSyBzD4imKvc9yyWchF7Knf1EE7SXp9kRKf0></your>
+import { initializeApp } from "firebase/app";
+import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai";
+import { firebaseConfig } from "./firebase";
 
-// import the Genkit and Google AI plugin libraries
-import { gemini15Flash, googleAI } from '@genkit-ai/googleai';
-import { genkit } from 'genkit';
+// Inicializa FirebaseApp (usa a mesma config do seu firebase.js)
+const firebaseApp = initializeApp(firebaseConfig, "gemini-app");
+const ai = getAI(firebaseApp, { backend: new GoogleAIBackend() });
+const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
 
-// configure a Genkit instance
-const ai = genkit({
-  plugins: [googleAI()],
-  model: gemini15Flash, // set default model
-  prompt: 'how are you'
-});
-
-const helloFlow = ai.defineFlow('helloFlow', async (name) => {
-  // make a generation request
-  const { text } = await ai.generate(`Hello Gemini, my name is ${name}`);
-  console.log(text);
-});
-
-helloFlow('Chris');
+export async function sendToGemini(message) {
+  try {
+    const result = await model.generateContent(message);
+    return result.response.text();
+  } catch (err) {
+    return "Desculpe, não consegui responder agora.";
+  }
+}

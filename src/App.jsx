@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Adminconsole from "./pages/AdminHome.jsx";
 import ConfigPage from "./pages/ConfigPage";
+import PixPage from "./pages/PixPage";
+import BopitoChat from "./pages/BopitoChat";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext.jsx";
@@ -19,11 +21,13 @@ function App() {
         <div className="app">
           <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/pix" element={<PixPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin" element={<Adminconsole />} />
             <Route path="/config" element={<ConfigPage />} />
+            <Route path="/bopito-chat" element={<BopitoChat />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
           <ToastContainer

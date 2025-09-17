@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import logo from "../assets/logomini.png";
 import card0 from "../assets/card_0.svg";
 import card1 from "../assets/card_1.svg";
+import pixIcon from "../assets/icon/Pix.svg";
 
 const formatMoney = (value) => {
   if (typeof value !== 'number') return '0,00';
@@ -102,7 +103,7 @@ const Content = () => {
         <div className="user-info">
           <p>Bem vindo, 
             {!userData ? (
-              <span><div className="loading-shimmer" style={{width: "100px", display: "inline-block"}}></div></span>
+              <span className="loading-shimmer" style={{width: "100px", display: "inline-block"}}></span>
             ) : (
               <span>{userData.apelido || userData.nomeCompleto}</span>
             )}
@@ -110,7 +111,7 @@ const Content = () => {
           <p>
             Seus PlayPoints: 
             {!userData ? (
-              <span><div className="loading-shimmer" style={{width: "40px", display: "inline-block"}}></div></span>
+              <span className="loading-shimmer" style={{width: "40px", display: "inline-block"}}></span>
             ) : (
               <span>0</span>
             )}
@@ -123,7 +124,7 @@ const Content = () => {
       <div className="saldo">
         <p>Saldo em conta</p>
         {!userData ? (
-          <h2><div className="loading-shimmer large"></div></h2>
+          <h2><span className="loading-shimmer large"></span></h2>
         ) : (
           <h2>R$ {formatMoney(userData.saldo)}</h2>
         )}
@@ -142,7 +143,10 @@ const Content = () => {
           onWheel={handleWheel}
           onMouseDown={handleMouseDown}
         >
-          <div><FaCreditCard /><p>PIX</p></div>
+          <div onClick={() => navigate('/pix')} style={{cursor: 'pointer'}}>
+            <img src={pixIcon} alt="PIX" style={{width: 22, height: 22, marginBottom: 2}} />
+            <p>PIX</p>
+          </div>
           <div className="highlight"><RiBankFill /><p>PIX.CRED <span>Até 12x</span></p></div>
           <div><FaPiggyBank /><p>TRANSFERÊNCIA</p></div>
           <div><FaShoppingCart /><p>BOLETO</p></div>
@@ -156,11 +160,11 @@ const Content = () => {
         <p>Fatura</p>
         {!userData ? (
           <>
-            <h2><div className="loading-shimmer large"></div></h2>
+            <h2><span className="loading-shimmer large"></span></h2>
             <p className="detalhes">
-              Venc: <b><div className="loading-shimmer" style={{width: "60px", display: "inline-block"}}></div></b>
+              Venc: <b><span className="loading-shimmer" style={{width: "60px", display: "inline-block"}}></span></b>
               <span>|</span>
-              Limite disponível: <b><div className="loading-shimmer" style={{width: "80px", display: "inline-block"}}></div></b>
+              Limite disponível: <b><span className="loading-shimmer" style={{width: "80px", display: "inline-block"}}></span></b>
             </p>
           </>
         ) : (

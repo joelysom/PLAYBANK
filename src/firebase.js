@@ -5,7 +5,7 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 // Configuração gerada no console do Firebase
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyAf1UfDcJQK-bmrc7hbl5cLq_LPdjbLAuI",
   authDomain: "playbank-5b183.firebaseapp.com",
   projectId: "playbank-5b183",
