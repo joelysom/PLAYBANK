@@ -1,0 +1,329 @@
+.content {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px;
+  color: #0f1724;
+  font-family: "Inter", sans-serif;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 70px; /* Space for bottom menu */
+}
+
+/* Responsive styles for different devices */
+@media screen and (max-width: 412px) {
+  .content {
+    padding: 8px;
+  }
+  
+  .header .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .user-info p {
+    font-size: 13px;
+  }
+
+  .saldo h2, .fatura h2 {
+    font-size: 20px;
+  }
+
+  .options div {
+    padding: 10px 16px;
+  }
+
+  .options div svg {
+    font-size: 18px;
+  }
+
+  .icon-btn {
+    padding: 20px;
+  }
+}
+
+/* iPhone styles */
+@media screen and (min-width: 375px) and (max-width: 390px) {
+  .content {
+    padding: 12px;
+  }
+}
+
+/* Larger phones (S20 Ultra, etc) */
+@media screen and (min-width: 412px) and (max-width: 480px) {
+  .content {
+    padding: 15px;
+  }
+
+  .saldo, .fatura {
+    padding: 18px;
+  }
+}
+
+/* Tall phones (iPhone 12 Pro Max, etc) */
+@media screen and (min-height: 800px) {
+  .shortcuts {
+    margin: 25px 0;
+  }
+
+  .card img {
+    margin: 15px 0;
+  }
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+}
+
+.user-info p {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.user-info span {
+  font-weight: 600;
+  color: #5d2bc0;
+}
+
+.user-info small {
+  font-size: 11px;
+  color: #666;
+}
+
+/* Saldo */
+.saldo {
+  background: linear-gradient(90deg, #9b4dff, #7a3eff);
+  border-radius: 12px;
+  color: white;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.saldo p {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.saldo h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  flex: 1;
+  padding: 6px;
+  border-radius: 10px;
+  border: none;
+  font-size: 12px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #9b4dff;
+  color: white;
+  font-weight: 500;
+}
+
+/* Options */
+.options-wrapper {
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.options {
+  display: flex;
+  gap: 12px;
+  padding: 4px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  width: 100%;
+  cursor: grab;
+}
+
+.options:active {
+  cursor: grabbing;
+}
+
+.options::-webkit-scrollbar {
+  display: none;
+}
+
+/* Enable mouse wheel scrolling */
+.options-wrapper {
+  position: relative;
+}
+
+.options-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+  pointer-events: none;
+}
+
+.options div {
+  flex: 0 0 auto;
+  text-align: center;
+  font-size: 12px;
+  background: #f8f8f8;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  cursor: pointer;
+  min-width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.options div:active {
+  transform: scale(0.95);
+}
+
+.options div svg {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.options div.highlight {
+  position: relative;
+  background: #f5f0ff;
+  border: 1px solid #e0d5ff;
+}
+
+.options div.highlight p span {
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  background: #ffd900;
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Fatura */
+.fatura {
+  background: linear-gradient(90deg, #5d2bc0, #3c1c90);
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 15px 0;
+}
+
+.fatura p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.fatura h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.fatura .detalhes {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.fatura .detalhes span {
+  margin: 0 5px;
+}
+
+/* Shortcuts */
+.shortcuts {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.icon-btn {
+  flex: 1;
+  padding: 25px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #7a3eff, #9b4dff);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+/* Banners */
+.card img {
+  width: 100%;
+  margin: 12px 0;
+  border-radius: 12px;
+}
+
+/* Bottom Menu */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 12px 0;
+  border-top: 1px solid #ddd;
+  font-size: 24px;
+  color: #777;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+.bottom-menu .active {
+  color: #9b4dff;
+}
+
+@media screen and (max-width: 412px) {
+  .bottom-menu {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .bottom-menu {
+    padding: 8px 0;
+  }
+}
