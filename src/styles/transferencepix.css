@@ -1,0 +1,130 @@
+.transferencepix {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+}
+
+/* Header */
+.tp-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tp-back {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Campo de busca */
+.tp-search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tp-search-section h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tp-search-wrapper {
+  display: flex;
+  align-items: center;
+  background: #2a0b42;
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+.tp-search-icon {
+  color: #bbb;
+  font-size: 1.1rem;
+  margin-right: 8px;
+}
+
+.tp-search {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.tp-search::placeholder {
+  color: #888;
+}
+
+/* Seções */
+.tp-section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: none;
+}
+
+/* Frequent contacts */
+.tp-frequent-list {
+  display: flex;
+  gap: 24px;
+}
+
+.tp-contact-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tp-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #7c6c87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--bg);
+}
+
+/* Todos os contatos */
+.tp-all-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tp-all-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 6px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.tp-all-item:hover {
+  background: #2a0b42;
+}
+
+.tp-all-item span {
+  font-size: 0.9rem;
+}

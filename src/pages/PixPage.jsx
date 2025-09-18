@@ -19,6 +19,9 @@ import "../styles/pix.css";
 
 export default function PixPage() {
   const navigate = useNavigate();
+  const handleTransferirClick = () => {
+    navigate('/transferencepix');
+  };
   return (
     <div className="pix-container">
       {/* Header */}
@@ -40,7 +43,7 @@ export default function PixPage() {
 
       {/* Ações principais */}
       <div className="pix-actions">
-        <div className="pix-action">
+        <div className="pix-action" onClick={handleTransferirClick} style={{cursor: 'pointer'}}>
           <img src={transferirIcon} alt="Transferir" width="28" />
           <span>Transferir</span>
         </div>

@@ -1,0 +1,129 @@
+.fatura-container {
+  padding: 20px;
+  color: var(--text);
+  font-family: var(--font-main);
+}
+
+.fatura-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fatura-logo img {
+  width: 48px;
+  height: 48px;
+}
+
+.fatura-close {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.fatura-limite {
+  margin: 20px 0;
+}
+
+.fatura-limite h3 {
+  margin-bottom: 6px;
+}
+
+.fatura-progress {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fatura-progress span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fatura-bar {
+  background: #333;
+  height: 6px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fatura-bar-fill {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.fatura-card-section {
+  margin: 20px 0;
+}
+
+.fatura-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2a003a;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.fatura-card-info h2 {
+  margin: 6px 0;
+  font-size: 1.4rem;
+}
+
+.fatura-card-img img {
+  width: 120px;
+  border-radius: 12px;
+}
+
+.fatura-historico {
+  width: 100%;
+  margin-top: 14px;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.fatura-lista {
+  margin-top: 20px;
+}
+
+.fatura-lista h3 {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.fatura-item {
+  margin-bottom: 14px;
+}
+
+.fatura-dia {
+  display: block;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+.fatura-desc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2a003a;
+  padding: 10px 14px;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.fatura-desc span {
+  font-weight: 600;
+}
+
+.fatura-desc p {
+  margin: 0;
+}

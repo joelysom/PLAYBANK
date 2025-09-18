@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useEffect } from "react";
 
-import logo from "../assets/logomini.png";
+import logo from "../assets/logomini.svg";
 import card0 from "../assets/card_0.svg";
 import card1 from "../assets/card_1.svg";
 import pixIcon from "../assets/icon/Pix.svg";
@@ -155,7 +155,7 @@ const Content = () => {
       </div>
 
       {/* Fatura */}
-      <div className="fatura">
+      <div className="fatura" style={{cursor: 'pointer'}} onClick={() => navigate('/fatura')}>
         <p>Fatura</p>
         {!userData ? (
           <>

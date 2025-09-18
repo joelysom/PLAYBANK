@@ -1,0 +1,159 @@
+.pixtransfervalue-container {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+}
+
+/* Header */
+.pixtv-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pixtv-back {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.pixtv-subtitle {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 4px;
+}
+
+.pixtv-contact {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Valor */
+.pixtv-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pixtv-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pixtv-input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.pixtv-error {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Divider */
+.pixtv-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 20px 0;
+}
+
+/* Pagando com */
+.pixtv-section {
+  margin-bottom: 20px;
+}
+
+.pixtv-label {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.pixtv-cards {
+  display: flex;
+  gap: 12px;
+}
+
+.pixtv-card {
+  flex: 1;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s;
+}
+
+.pixtv-card.selected {
+  border: 2px solid var(--primary);
+  background: rgba(154, 54, 232, 0.15);
+}
+
+.pixtv-card-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.pixtv-card-sub {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* Destinatário */
+.pixtv-userinfo {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: auto;
+  font-size: 0.95rem;
+}
+
+.pixtv-userinfo h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.pixtv-userinfo p {
+  margin: 4px 0;
+  color: #eee;
+}
+
+.pixtv-userinfo b {
+  color: var(--secondary);
+}
+
+/* Footer */
+.pixtv-footer {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.pixtv-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 24px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pixtv-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
