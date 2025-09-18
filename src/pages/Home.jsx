@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/home.css";
+import "../styles/Home.css";
 import Content from "../components/content";
 import Dashboard from "../components/dashboard";
 import { useAuth } from "../context/AuthContext.jsx";
