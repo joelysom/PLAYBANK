@@ -9,120 +9,150 @@
   color: var(--text);
 }
 
+
 .user-header {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   width: 100%;
   position: relative;
+  padding: 0 0 8px 0;
+  border-bottom: 1.5px solid rgba(255,255,255,0.10);
 }
+
 
 .config-home-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: linear-gradient(135deg, #b39ddb, #7e57c2);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   border: none;
   color: #fff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  border-radius: 16px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 2.1rem;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 4px 16px rgba(60, 20, 120, 0.13);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
   z-index: 2;
 }
 .config-home-btn:hover {
-  background: linear-gradient(135deg, #7e57c2, #b39ddb);
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
   color: #ffe082;
+  box-shadow: 0 8px 24px rgba(60, 20, 120, 0.18);
 }
 
+
 .user-avatar {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #b39ddb, #7e57c2);
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 2.2rem;
   color: white;
-  margin-right: 15px;
+  margin-right: 18px;
+  box-shadow: 0 2px 8px rgba(60, 20, 120, 0.10);
 }
 
+
 .user-info h2 {
-  margin: 0;
-  color: var(--text);
-  font-size: 1.2rem;
+  margin: 0 0 2px 0;
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
+
 
 .user-info p,
 .user-info span {
   margin: 2px 0;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #bdbdbd;
+  font-weight: 500;
 }
+
 
 .menu-options {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 400px;
-  gap: 15px;
+  max-width: 420px;
+  gap: 14px;
+  margin: 0 auto 0 auto;
 }
+
 
 .menu-btn {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  color: white;
+  background: rgba(255,255,255,0.13);
+  color: var(--text);
   border: none;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 16px;
+  padding: 15px 18px;
+  border-radius: 12px;
+  font-size: 1.08rem;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   justify-content: flex-start;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background 0.18s, color 0.18s;
   width: 100%;
+  box-shadow: 0 1.5px 6px 0 rgba(60, 20, 120, 0.06);
+}
+.menu-btn:hover {
+  background: rgba(255,255,255,0.22);
+  color: var(--primary);
 }
 
-.menu-btn:hover {
-  opacity: 0.9;
-}
 
 .icon {
-  font-size: 18px;
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-right: 6px;
+  transition: color 0.18s;
 }
+
 
 .bopito-card {
   margin-top: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 32px;
 }
+
 
 .bopito-img {
-  width: 90px;
+  width: 96px;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 8px rgba(60, 20, 120, 0.10));
 }
+
 
 .bopito-btn {
-  background: linear-gradient(90deg, #9b59b6, #6a1b9a);
-  color: white;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
   border: none;
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-size: 16px;
+  padding: 13px 28px;
+  border-radius: 14px;
+  font-size: 1.08rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.18s, color 0.18s;
+  box-shadow: 0 2px 8px rgba(60, 20, 120, 0.10);
 }
-
 .bopito-btn:hover {
-  opacity: 0.9;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  color: #ffe082;
 }

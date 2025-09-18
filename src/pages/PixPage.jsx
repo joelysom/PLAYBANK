@@ -1,19 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  FaMoneyBillWave,
-  FaCalendarAlt,
-  FaQrcode,
-  FaRegCopy,
-  FaMoneyCheckAlt,
-  FaCreditCard,
-  FaMicrophone,
-} from "react-icons/fa";
-import { MdAttachMoney } from "react-icons/md";
 import { IoChevronBack } from "react-icons/io5";
-import { RiMoneyDollarCircleFill } from "react-icons/ri";
+import { MdAttachMoney } from "react-icons/md";
 import { AiFillSetting } from "react-icons/ai";
 import { BsShieldCheck } from "react-icons/bs";
+
+// Importando os SVGs
+import transferirIcon from "../assets/pixicons/transferir.svg";
+import programarIcon from "../assets/pixicons/programar.svg";
+import qrcodeIcon from "../assets/pixicons/qrcode.svg";
+import copiaEcolaIcon from "../assets/pixicons/copiaecola.svg";
+import cobrarIcon from "../assets/pixicons/cobrar.svg";
+import depositarIcon from "../assets/pixicons/depositar.svg";
+import pixNoCreditoIcon from "../assets/pixicons/pixnocredito.svg";
+import pixPorVozIcon from "../assets/pixicons/pixporvoz.svg";
 
 import "../styles/pix.css";
 
@@ -41,35 +41,35 @@ export default function PixPage() {
       {/* Ações principais */}
       <div className="pix-actions">
         <div className="pix-action">
-          <FaMoneyBillWave size={28} />
+          <img src={transferirIcon} alt="Transferir" width="28" />
           <span>Transferir</span>
         </div>
         <div className="pix-action">
-          <FaCalendarAlt size={28} />
+          <img src={programarIcon} alt="Programar" width="28" />
           <span>Programar</span>
         </div>
         <div className="pix-action">
-          <FaQrcode size={28} />
+          <img src={qrcodeIcon} alt="QR Code" width="28" />
           <span>Ler QR code</span>
         </div>
         <div className="pix-action">
-          <FaRegCopy size={28} />
+          <img src={copiaEcolaIcon} alt="Copia e Cola" width="28" />
           <span>Pix Copia e Cola</span>
         </div>
         <div className="pix-action">
-          <FaMoneyCheckAlt size={28} />
+          <img src={cobrarIcon} alt="Cobrar" width="28" />
           <span>Cobrar</span>
         </div>
         <div className="pix-action">
-          <RiMoneyDollarCircleFill size={28} />
+          <img src={depositarIcon} alt="Depositar" width="28" />
           <span>Depositar</span>
         </div>
         <div className="pix-action">
-          <FaCreditCard size={28} />
+          <img src={pixNoCreditoIcon} alt="Pix no Crédito" width="28" />
           <span>Pix no crédito</span>
         </div>
         <div className="pix-action">
-          <FaMicrophone size={28} />
+          <img src={pixPorVozIcon} alt="Pix por Voz" width="28" />
           <span>Pix por voz</span>
         </div>
       </div>

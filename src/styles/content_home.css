@@ -74,22 +74,30 @@
 }
 
 /* Header */
+
 .header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  gap: 10px;
 }
+
 
 .logo-container {
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
+
 .logo {
-  width: 45px;
-  height: 45px;
-  transition: transform 0.3s ease;
+  width: 48px;
+  height: 48px;
+  transition: transform 0.22s cubic-bezier(.4,2,.6,1);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.10);
 }
 
 .logo:hover {
@@ -139,61 +147,74 @@
   font-size: 16px;
 }
 
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 8px;
+}
 .user-info p {
   font-size: 14px;
-  margin: 2px 0;
+  margin: 0 0 1px 0;
+  color: #222;
+  font-weight: 500;
 }
-
 .user-info span {
-  font-weight: 600;
-  color: #5d2bc0;
+  font-weight: 700;
+  color: var(--primary);
 }
-
 .user-info small {
   font-size: 11px;
-  color: #666;
+  color: #888;
+  margin-left: 4px;
 }
 
 /* Saldo */
-.saldo {
-  background: linear-gradient(90deg, #9b4dff, #7a3eff);
-  border-radius: 12px;
-  color: white;
-  padding: 15px;
-  margin: 15px 0;
-}
 
+.saldo {
+  background: linear-gradient(90deg, #9b4dff 70%, #7a3eff 100%);
+  border-radius: 14px;
+  color: #fff;
+  padding: 18px 16px 14px 16px;
+  margin: 18px 0 14px 0;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.08);
+}
 .saldo p {
   font-size: 13px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  color: #e0d5ff;
+  font-weight: 500;
 }
-
 .saldo h2 {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 /* Tabs */
+
 .tabs {
   display: flex;
-  gap: 5px;
-  margin-bottom: 10px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
-
 .tab {
   flex: 1;
-  padding: 6px;
+  padding: 7px 0;
   border-radius: 10px;
   border: none;
-  font-size: 12px;
-  background: #eee;
+  font-size: 13px;
+  background: #f3f0fa;
+  color: #7a3eff;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.18s, color 0.18s;
 }
-
 .tab.active {
   background: #9b4dff;
-  color: white;
-  font-weight: 500;
+  color: #fff;
+  font-weight: 700;
 }
 
 /* Options */
@@ -246,16 +267,17 @@
   pointer-events: none;
 }
 
+
 .options div {
   flex: 0 0 auto;
   text-align: center;
-  font-size: 12px;
-  background: #f8f8f8;
-  padding: 12px 20px;
-  border-radius: 12px;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
+  font-size: 13px;
+  background: #fff;
+  padding: 13px 18px 10px 18px;
+  border-radius: 13px;
+  color: #7a3eff;
+  box-shadow: 0 2px 8px rgba(60, 20, 120, 0.04);
+  transition: transform 0.18s, box-shadow 0.18s, color 0.18s;
   cursor: pointer;
   min-width: min-content;
   display: flex;
@@ -263,23 +285,26 @@
   align-items: center;
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
+  border: none;
 }
-
 .options div:active {
-  transform: scale(0.95);
+  transform: scale(0.97);
+  box-shadow: 0 1.5px 6px 0 rgba(60, 20, 120, 0.10);
 }
-
 .options div svg {
   font-size: 20px;
   margin-bottom: 4px;
+  color: #7a3eff;
 }
-
+.options div img {
+  margin-bottom: 4px;
+}
 .options div.highlight {
   position: relative;
   background: #f5f0ff;
-  border: 1px solid #e0d5ff;
+  border: 1.5px solid #e0d5ff;
+  color: #5d2bc0;
 }
-
 .options div.highlight p span {
   position: absolute;
   top: -6px;
@@ -293,67 +318,73 @@
 }
 
 /* Fatura */
-.fatura {
-  background: linear-gradient(90deg, #5d2bc0, #3c1c90);
-  color: white;
-  padding: 15px;
-  border-radius: 12px;
-  margin: 15px 0;
-}
 
+.fatura {
+  background: linear-gradient(90deg, #5d2bc0 70%, #3c1c90 100%);
+  color: #fff;
+  padding: 18px 16px 14px 16px;
+  border-radius: 14px;
+  margin: 18px 0 14px 0;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.08);
+}
 .fatura p {
   margin: 0;
   font-size: 13px;
+  color: #e0d5ff;
+  font-weight: 500;
 }
-
 .fatura h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 5px 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
 }
-
 .fatura .detalhes {
   font-size: 12px;
-  opacity: 0.9;
+  opacity: 0.93;
+  color: #fff;
 }
-
 .fatura .detalhes span {
   margin: 0 5px;
 }
 
 /* Shortcuts */
+
 .shortcuts {
   display: flex;
   gap: 10px;
-  margin: 15px 0;
+  margin: 18px 0 12px 0;
 }
-
 .icon-btn {
   flex: 1;
-  padding: 25px;
-  border-radius: 15px;
-  background: linear-gradient(90deg, #7a3eff, #9b4dff);
-  color: white;
+  padding: 22px 0;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #7a3eff 70%, #9b4dff 100%);
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 22px;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.08);
 }
 
 /* Banners */
+
 .card img {
   width: 100%;
-  margin: 12px 0;
-  border-radius: 12px;
+  margin: 14px 0 8px 0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.06);
 }
+
 
 .card-title {
   font-family: "Roboto Mono", monospace;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #0f1724;
-  margin: 1px 0 1px 0;
-  text-align: start;
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #5d2bc0;
+  margin: 2px 0 2px 0;
+  text-align: left;
+  letter-spacing: -0.5px;
 }
 
 /* Bottom Menu */
