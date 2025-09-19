@@ -184,11 +184,11 @@ const Content = () => {
         <div className="icon-btn"><FaRocket /></div>
       </div>
 
-      {/* Banners */}
-      <div className="card"><img src={card0} alt="card 0" /></div>
-      <h3 className="card-title">Ser PlayBank é saber que</h3>
-      <div className="card"><img src={card1} alt="card 1" /></div>
-      {/* Dashboard removido daqui */}
+  {/* Banners */}
+  <div className="card"><img src={card0} alt="card 0" /></div>
+  <h3 className="card-title">Ser PlayBank é saber que</h3>
+  <div className="card" style={{cursor: 'pointer'}} onClick={() => navigate('/exercicios')}><img src={card1} alt="card 1" /></div>
+  {/* Dashboard removido daqui */}
     </div>
   );
 };

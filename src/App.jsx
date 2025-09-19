@@ -10,6 +10,7 @@ import BopitoChat from "./pages/BopitoChat";
 import TransferencePix from "./pages/transferencepix";
 import PixTransferValue from "./pages/PixTransferValue";
 import FaturaPage from "./pages/FaturaPage";
+import ExerciciosPage from "./pages/ExerciciosPage";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext.jsx";
@@ -34,6 +35,7 @@ function App() {
             <Route path="/transferencepix" element={<TransferencePix />} />
             <Route path="/pix-transfer-value" element={<PixTransferValue />} />
             <Route path="/fatura" element={<FaturaPage />} />
+            <Route path="/exercicios" element={<ExerciciosPage />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
           <ToastContainer
