@@ -9,7 +9,7 @@ import fireIcon from '../assets/exercicios/fire.svg';
 import card0Image from '../assets/exercicios/Card_0.svg';
 import card1Image from '../assets/exercicios/Card_1.svg';
 import card2Image from '../assets/exercicios/Card_2.svg';
-import gamesIcon from '../assets/exercicios/Games.svg';
+import gamesIcon from '../assets/exercicios/games.svg';
 import playbankGamesIcon from '../assets/exercicios/PlayBankGames.svg';
 import playButtonV2 from '../assets/exercicios/PlayButtonv2.svg';
 import closeIcon from '../assets/exercicios/close.svg'; // Ícone de fechar, ajustei o nome para ser mais claro
