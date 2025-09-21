@@ -59,6 +59,8 @@
 .bopito-chat-messages {
   flex: 1;
   padding: 1rem;
+  padding-bottom: 2.8rem;
+  /* espaço extra para não ficar atrás do menu do sistema */
   overflow-y: auto;
   background: #f9f7fb;
   display: flex;
@@ -102,6 +104,17 @@
   border-top: 1px solid #ddd;
   padding: 0.7rem 1rem;
   background: #f5f0fa;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+@media (max-width: 480px) {
+  .bopito-chat-messages {
+    padding-bottom: 4.2rem;
+  }
+  .bopito-chat-input {
+    padding-bottom: env(safe-area-inset-bottom, 1.2rem);
+  }
 }
 
 .bopito-chat-input input {

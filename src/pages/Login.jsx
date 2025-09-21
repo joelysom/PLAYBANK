@@ -1,5 +1,6 @@
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import tudum from "../assets/tudum/tudum.mp4";
 import "../styles/Login.css";
 import logo from "../assets/logo.png";
 import bot from "../assets/BOT.png";
@@ -9,11 +10,15 @@ import { useNavigate } from "react-router-dom";
 import { notifySuccess, notifyError } from "../utils/toast";
 
 
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showVideo, setShowVideo] = useState(false);
+  const [videoKey, setVideoKey] = useState(0); // For replaying video if needed
   const navigate = useNavigate();
+  const videoRef = useRef(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,10 +30,10 @@ export default function Login() {
         navigate("/admin");
         return;
       }
-      
       await signInWithEmailAndPassword(auth, email, password);
       notifySuccess("Login realizado com sucesso!");
-      navigate("/home"); // Redireciona para Home após login
+      setShowVideo(true);
+      setVideoKey(prev => prev + 1); // Forçar reload do vídeo
     } catch (err) {
       let msg = "Erro ao fazer login.";
       if (err.code === "auth/user-not-found" || err.code === "auth/wrong-password") {
@@ -41,8 +46,53 @@ export default function Login() {
     }
   };
 
+  // Handler para quando o vídeo termina
+  const handleVideoEnd = () => {
+    setShowVideo(false);
+    setTimeout(() => navigate("/home"), 100); // Pequeno delay para sumir o vídeo
+  };
+
+  // Handler para pular para 3s ao clicar/tocar
+  const handleSkip = () => {
+    if (videoRef.current) {
+      if (videoRef.current.currentTime < 3) {
+        videoRef.current.currentTime = 3;
+      }
+    }
+  };
+
   return (
     <div className="login-container">
+      {/* Vídeo de login */}
+      {showVideo && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'black',
+            zIndex: 9999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+          }}
+          onClick={handleSkip}
+          onTouchStart={handleSkip}
+        >
+          <video
+            key={videoKey}
+            ref={videoRef}
+            src={tudum}
+            autoPlay
+            onEnded={handleVideoEnd}
+            style={{ maxWidth: '100vw', maxHeight: '100vh' }}
+          />
+        </div>
+      )}
+
       {/* Logo e título */}
       <div className="login-header">
         <img src={logo} alt="Logo" className="logo" />

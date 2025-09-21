@@ -185,7 +185,7 @@ const Content = () => {
       </div>
 
   {/* Banners */}
-  <div className="card"><img src={card0} alt="card 0" /></div>
+  <div className="card" style={{cursor: 'pointer'}} onClick={() => navigate('/blackcard')}><img src={card0} alt="card 0" /></div>
   <h3 className="card-title">Ser PlayBank é saber que</h3>
   <div className="card" style={{cursor: 'pointer'}} onClick={() => navigate('/exercicios')}><img src={card1} alt="card 1" /></div>
   {/* Dashboard removido daqui */}

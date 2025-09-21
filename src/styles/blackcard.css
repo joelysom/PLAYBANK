@@ -1,0 +1,273 @@
+/* backcard.css - estilos específicos da página Cartão Black */
+
+/* Container da tela (dentro da .app global) */
+.screen {
+  width: 100%;
+  min-height: 100%;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HERO - título + subtítulo + cartão + CTA */
+.hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  color: #f5f1fb;
+}
+
+.subtitle {
+  max-width: 320px;
+  font-size: 16px;
+  color: #e6dfe9;
+  margin-bottom: 22px;
+}
+
+/* grupo do cartão, botão e mascot */
+.card-and-cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+/* wrapper para as imagens do cartão - sobreposição */
+.card-wrap {
+  width: 240px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back {
+  position: absolute;
+  left: -20px;
+  width: 220px;
+  transform: rotateY(10deg) scale(0.98);
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+}
+
+.card-front {
+  position: absolute;
+  right: -20px;
+  width: 200px;
+  transform: rotateY(-6deg);
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.6));
+}
+
+/* botão principal - estilo pill grande como na imagem */
+.cta {
+  padding: 14px 36px;
+  border-radius: 36px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  margin-left: 12px;
+}
+
+/* mascot ao lado direito, posicionado levemente mais embaixo */
+.mascot {
+  width: 94px;
+  height: auto;
+  position: absolute;
+  right: 22px;
+  bottom: -18px;
+  transform: translateY(0);
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));
+}
+
+/* Sections comuns */
+.section {
+  width: 100%;
+  margin-top: 26px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: #f6eff8;
+  margin-bottom: 18px;
+}
+
+/* grid de benefícios (2 colunas) */
+.benefit-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 12px;
+  align-items: start;
+}
+
+/* cada item de beneficio */
+.benefit {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-text {
+  display: flex;
+  flex-direction: column;
+  color: #e7deef;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.benefit-text strong {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+/* REQUISITOS layout (duas colunas) */
+.req-grid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.req {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 48%;
+}
+
+.icon-small {
+  width: 36px;
+  height: 36px;
+}
+
+.req-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.email {
+  color: #f0d9ff;
+  font-weight: 600;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+/* espaçador inferior para garantir rolagem confortável */
+.footer-spacer {
+  height: 36px;
+}
+
+/* RESPONSIVO - ajustando para telas menores */
+@media (max-width: 480px) {
+  .screen {
+    padding: 18px 4vw;
+  }
+  .hero {
+    margin-bottom: 18px;
+  }
+  .title {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 14px;
+    max-width: 90vw;
+  }
+  .card-and-cta {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .card-wrap {
+    width: 180px;
+    height: 90px;
+    margin-bottom: 6px;
+  }
+  .blackcard-img {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    max-height: 90px;
+    display: block;
+    margin: 0 auto;
+  }
+  .cta {
+    padding: 10px 18vw;
+    font-size: 15px;
+    margin-left: 0;
+    margin-bottom: 8px;
+    width: 100%;
+    max-width: 260px;
+  }
+  .mascot {
+    width: 64px;
+    right: 0;
+    bottom: -10px;
+  }
+  .section {
+    margin-top: 18px;
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .benefit-grid {
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+  }
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+  .benefit-text {
+    font-size: 12px;
+  }
+  .benefit-text strong {
+    font-size: 12px;
+  }
+  .req-grid {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .req {
+    width: 100%;
+  }
+  .icon-small {
+    width: 28px;
+    height: 28px;
+  }
+  .footer-spacer {
+    height: 24px;
+  }
+}
