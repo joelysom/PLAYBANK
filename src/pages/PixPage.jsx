@@ -15,7 +15,7 @@ import depositarIcon from "../assets/pixicons/depositar.svg";
 import pixNoCreditoIcon from "../assets/pixicons/pixnocredito.svg";
 import pixPorVozIcon from "../assets/pixicons/pixporvoz.svg";
 
-import "../styles/pix.css";
+import styles from "../styles/pix.module.css";
 
 export default function PixPage() {
   const navigate = useNavigate();
@@ -23,67 +23,67 @@ export default function PixPage() {
     navigate('/transferencepix');
   };
   return (
-    <div className="pix-container">
+  <div className={styles.pixContainer}>
       {/* Header */}
-      <header className="pix-header">
-        <div className="pix-logo"></div>
-        <button className="pix-back" onClick={() => navigate('/home')}>
+      <header className={styles.pixHeader}>
+        <div className={styles.pixLogo}></div>
+        <button className={styles.pixBack} onClick={() => navigate('/home')}>
           <IoChevronBack size={22} />
         </button>
       </header>
 
-      <h1 className="pix-title">Área Pix</h1>
+  <h1 className={styles.pixTitle}>Área Pix</h1>
 
       {/* Input */}
       <input
-        className="pix-input"
+        className={styles.pixInput}
         type="text"
         placeholder="Digite tudo: chave e valor"
       />
 
       {/* Ações principais */}
-      <div className="pix-actions">
-        <div className="pix-action" onClick={handleTransferirClick} style={{cursor: 'pointer'}}>
+      <div className={styles.pixActions}>
+        <div className={styles.pixAction} onClick={handleTransferirClick} style={{cursor: 'pointer'}}>
           <img src={transferirIcon} alt="Transferir" width="28" />
           <span>Transferir</span>
         </div>
-        <div className="pix-action">
+        <div className={styles.pixAction}>
           <img src={programarIcon} alt="Programar" width="28" />
           <span>Programar</span>
         </div>
-        <div className="pix-action">
+        <div className={styles.pixAction}>
           <img src={qrcodeIcon} alt="QR Code" width="28" />
           <span>Ler QR code</span>
         </div>
-        <div className="pix-action">
+        <div className={styles.pixAction}>
           <img src={copiaEcolaIcon} alt="Copia e Cola" width="28" />
           <span>Pix Copia e Cola</span>
         </div>
-        <div className="pix-action">
+        <div className={styles.pixAction}>
           <img src={cobrarIcon} alt="Cobrar" width="28" />
           <span>Cobrar</span>
         </div>
-        <div className="pix-action">
+        <div className={styles.pixAction}>
           <img src={depositarIcon} alt="Depositar" width="28" />
           <span>Depositar</span>
         </div>
-        <div className="pix-action">
+        <div className={styles.pixAction}>
           <img src={pixNoCreditoIcon} alt="Pix no Crédito" width="28" />
           <span>Pix no crédito</span>
         </div>
-        <div className="pix-action">
+        <div className={styles.pixAction}>
           <img src={pixPorVozIcon} alt="Pix por Voz" width="28" />
           <span>Pix por voz</span>
         </div>
       </div>
 
       {/* Card Promo */}
-      <div className="pix-card">
+      <div className={styles.pixCard}>
         Pix no crédito: Transfira até R$ 500 sem usar o saldo da sua conta
       </div>
 
       {/* Preferências */}
-      <div className="pix-preferences">
+      <div className={styles.pixPreferences}>
         <h2>Preferências</h2>
         <ul>
           <li>

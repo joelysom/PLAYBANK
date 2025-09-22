@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "../styles/content_home.css";
+import React, { useState, useRef } from "react";
+import styles from "./content.module.css";
 import "../styles/loading.css";
 import { FaRocket, FaPiggyBank, FaHistory, FaSignOutAlt } from "react-icons/fa";
 import { RiBankFill } from "react-icons/ri";
@@ -31,6 +31,7 @@ const Content = () => {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [userData, setUserData] = useState(null);
+  const optionsRef = useRef(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -52,6 +53,13 @@ const Content = () => {
 
     fetchUserData();
   }, [user]);
+
+  // Garantir que o carrossel inicie no começo (PIX visível)
+  useEffect(() => {
+    if (optionsRef.current) {
+      optionsRef.current.scrollLeft = 0;
+    }
+  }, []);
   
   const handleLogoClick = () => {
     setShowMenu(!showMenu);
@@ -85,21 +93,21 @@ const Content = () => {
   };
 
   return (
-    <div className="content">
+  <div className={styles.content}>
       {/* Header */}
-      <div className="header">
-        <div className="logo-container">
-          <img src={logo} alt="logo" className="logo" onClick={handleLogoClick} />
-          <div className={`logout-menu ${showMenu ? 'show' : ''}`}>
-            <div className="menu-item" onClick={() => navigate('/config')}>
+  <div className={styles.header}>
+        <div className={styles["logo-container"]}>
+          <img src={logo} alt="logo" className={styles.logo} onClick={handleLogoClick} />
+          <div className={`${styles["logout-menu"]} ${showMenu ? styles.show : ""}`}>
+            <div className={styles["menu-item"]} onClick={() => navigate('/config')}>
               <FaCog /> Configurações
             </div>
-            <div className="menu-item" onClick={logout}>
+            <div className={styles["menu-item"]} onClick={logout}>
               <FaSignOutAlt /> Sair
             </div>
           </div>
         </div>
-        <div className="user-info">
+        <div className={styles["user-info"]}>
           <p>Bem vindo, 
             {!userData ? (
               <span className="loading-shimmer" style={{width: "100px", display: "inline-block"}}></span>
@@ -120,7 +128,7 @@ const Content = () => {
       </div>
 
       {/* Saldo */}
-      <div className="saldo">
+  <div className={styles.saldo}>
         <p>Saldo em conta</p>
         {!userData ? (
           <h2><span className="loading-shimmer large"></span></h2>
@@ -130,23 +138,25 @@ const Content = () => {
       </div>
 
       {/* Tabs */}
-      <div className="tabs">
-        <button className="tab active">cartões</button>
-        <button className="tab">historico</button>
+      <div className={styles.tabs}>
+        <button className={`${styles.tab} ${styles.active}`} onClick={() => navigate('/cards')}>cartões</button>
+        <button className={styles.tab}>historico</button>
       </div>
 
       {/* Opções */}
-      <div className="options-wrapper">
+      <div className={styles["options-wrapper"]}>
         <div 
-          className="options"
+          className={styles.options}
+          ref={optionsRef}
           onWheel={handleWheel}
           onMouseDown={handleMouseDown}
+          style={{scrollBehavior: 'smooth'}}
         >
           <div onClick={() => navigate('/pix')} style={{cursor: 'pointer'}}>
             <img src={pixIcon} alt="PIX" style={{width: 22, height: 22, marginBottom: 2}} />
             <p>PIX</p>
           </div>
-          <div className="highlight"><RiBankFill /><p>PIX.CRED <span>Até 12x</span></p></div>
+          <div className={styles.highlight}><RiBankFill /><p>PIX.CRED <span>Até 12x</span></p></div>
           <div><FaPiggyBank /><p>TRANSFERÊNCIA</p></div>
           <div><FaShoppingCart /><p>BOLETO</p></div>
           <div><BiSolidCoupon /><p>CUPONS</p></div>
@@ -155,7 +165,7 @@ const Content = () => {
       </div>
 
       {/* Fatura */}
-      <div className="fatura" style={{cursor: 'pointer'}} onClick={() => navigate('/fatura')}>
+  <div className={styles.fatura} style={{cursor: 'pointer'}} onClick={() => navigate('/fatura')}>
         <p>Fatura</p>
         {!userData ? (
           <>
@@ -179,14 +189,14 @@ const Content = () => {
       </div>
 
       {/* Shortcuts */}
-      <div className="shortcuts">
-        <div className="icon-btn"><FaPiggyBank /></div>
-        <div className="icon-btn"><FaRocket /></div>
+      <div className={styles.shortcuts}>
+        <div className={styles["icon-btn"]}><FaPiggyBank /></div>
+        <div className={styles["icon-btn"]} onClick={() => navigate('/investdashboard')} style={{cursor: 'pointer'}}><FaRocket /></div>
       </div>
 
   {/* Banners */}
   <div className="card" style={{cursor: 'pointer'}} onClick={() => navigate('/blackcard')}><img src={card0} alt="card 0" /></div>
-  <h3 className="card-title">Ser PlayBank é saber que</h3>
+  <h3 className={styles["card-title"]}>Ser PlayBank é saber que</h3>
   <div className="card" style={{cursor: 'pointer'}} onClick={() => navigate('/exercicios')}><img src={card1} alt="card 1" /></div>
   {/* Dashboard removido daqui */}
     </div>

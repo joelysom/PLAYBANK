@@ -1,0 +1,337 @@
+/* content.module.css - estilos isolados para o componente Content */
+
+.content {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px;
+  color: #0f1724;
+  font-family: "Roboto Mono", monospace;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  gap: 10px;
+}
+
+.logo-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.22s cubic-bezier(.4,2,.6,1);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.10);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logout-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  min-width: 120px;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.logout-menu.show {
+  opacity: 1;
+  transform: translateY(5px);
+  visibility: visible;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #333;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f5f0ff;
+  color: #5d2bc0;
+}
+
+.menu-item svg {
+  font-size: 16px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 8px;
+}
+.user-info p {
+  font-size: 14px;
+  margin: 0 0 1px 0;
+  color: #222;
+  font-weight: 500;
+}
+.user-info span {
+  font-weight: 700;
+  color: var(--primary);
+}
+.user-info small {
+  font-size: 11px;
+  color: #888;
+  margin-left: 4px;
+}
+
+.saldo {
+  background: linear-gradient(90deg, #9b4dff 70%, #7a3eff 100%);
+  border-radius: 14px;
+  color: #fff;
+  padding: 18px 16px 14px 16px;
+  margin: 18px 0 14px 0;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.08);
+}
+.saldo p {
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #e0d5ff;
+  font-weight: 500;
+}
+.saldo h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.tab {
+  flex: 1;
+  padding: 7px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 13px;
+  background: #f3f0fa;
+  color: #7a3eff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.tab.active {
+  background: #9b4dff;
+  color: #fff;
+  font-weight: 700;
+}
+
+.options-wrapper {
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.options {
+  display: flex;
+  gap: 12px;
+  padding: 4px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  width: 100%;
+  cursor: grab;
+}
+.options:active {
+  cursor: grabbing;
+}
+.options::-webkit-scrollbar {
+  display: none;
+}
+.options-wrapper {
+  position: relative;
+}
+.options-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+  pointer-events: none;
+}
+.options div {
+  flex: 0 0 auto;
+  text-align: center;
+  font-size: 13px;
+  background: #fff;
+  padding: 13px 18px 10px 18px;
+  border-radius: 13px;
+  color: #7a3eff;
+  box-shadow: 0 2px 8px rgba(60, 20, 120, 0.04);
+  transition: transform 0.18s, box-shadow 0.18s, color 0.18s;
+  cursor: pointer;
+  min-width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+}
+.options div:active {
+  transform: scale(0.97);
+  box-shadow: 0 1.5px 6px 0 rgba(60, 20, 120, 0.10);
+}
+.options div svg {
+  font-size: 20px;
+  margin-bottom: 4px;
+  color: #7a3eff;
+}
+.options div img {
+  margin-bottom: 4px;
+}
+.options div.highlight {
+  position: relative;
+  background: #f5f0ff;
+  border: 1.5px solid #e0d5ff;
+  color: #5d2bc0;
+}
+.options div.highlight p span {
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  background: #ffd900;
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+}
+
+.fatura {
+  background: linear-gradient(90deg, #5d2bc0 70%, #3c1c90 100%);
+  color: #fff;
+  padding: 18px 16px 14px 16px;
+  border-radius: 14px;
+  margin: 18px 0 14px 0;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.08);
+}
+.fatura p {
+  margin: 0;
+  font-size: 13px;
+  color: #e0d5ff;
+  font-weight: 500;
+}
+.fatura h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+.fatura .detalhes {
+  font-size: 12px;
+  opacity: 0.93;
+  color: #fff;
+}
+.fatura .detalhes span {
+  margin: 0 5px;
+}
+
+.shortcuts {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0 12px 0;
+}
+.icon-btn {
+  flex: 1;
+  padding: 22px 0;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #7a3eff 70%, #9b4dff 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.08);
+}
+
+.card img {
+  width: 100%;
+  margin: 14px 0 8px 0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(60, 20, 120, 0.06);
+}
+
+.card-title {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #5d2bc0;
+  margin: 2px 0 2px 0;
+  text-align: left;
+  letter-spacing: -0.5px;
+}
+
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 12px 0;
+  border-top: 1px solid #ddd;
+  font-size: 24px;
+  color: #777;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+.bottom-menu .active {
+  color: #9b4dff;
+}
+
+@media screen and (max-width: 412px) {
+  .bottom-menu {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .bottom-menu {
+    padding: 8px 0;
+  }
+}

@@ -1,0 +1,167 @@
+.container {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #0d001a;
+  color: #fff;
+  max-width: 412px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.close {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.cardInvest {
+  background: #2a0050;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.totalInvestido {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.investRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.valor {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.buttonInvest {
+  background: linear-gradient(90deg, #e633b0, #9a36e8);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.navButton {
+  flex: 1;
+  margin: 0 4px;
+  background-color: #2a0050;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px #0006;
+}
+
+.searchBox {
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: #fff;
+  color: #000;
+}
+
+.assetList {
+  margin-bottom: 20px;
+}
+
+.assetItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #140028;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.assetIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.assetInfo {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.assetName {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.assetPrice {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.assetChangePos {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #00c853;
+}
+
+.chartWrapper {
+  background: #140028;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.bottomSearch {
+  text-align: center;
+}
+
+.bottomSearch button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  background-color: #2a0050;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}

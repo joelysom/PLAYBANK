@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/pixtransfervalue.css";
+import styles from "../styles/pixtransfervalue.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoChevronBack } from "react-icons/io5";
 import { useAuth } from "../context/AuthContext.jsx";
@@ -140,24 +140,24 @@ const PixTransferValue = () => {
   };
 
   return (
-    <div className="pixtransfervalue-container">
+  <div className={styles.pixtransfervalueContainer}>
       {/* Header */}
-      <div className="pixtv-header">
-        <button onClick={() => navigate("/pix")} className="pixtv-back">
+      <div className={styles.pixtvHeader}>
+        <button onClick={() => navigate("/pix")} className={styles.pixtvBack}>
           <IoChevronBack />
         </button>
         <div>
-          <p className="pixtv-subtitle">Transferir para</p>
-          <h2 className="pixtv-contact">
+          <p className={styles.pixtvSubtitle}>Transferir para</p>
+          <h2 className={styles.pixtvContact}>
             {contact.nomeCompleto || contact.name}
           </h2>
         </div>
       </div>
 
       {/* Valor */}
-      <form onSubmit={handleSubmit} className="pixtv-form" autoComplete="off">
+      <form onSubmit={handleSubmit} className={styles.pixtvForm} autoComplete="off">
         <div
-          className="pixtv-value"
+          className={styles.pixtvValue}
           onClick={handleValueClick}
           style={{ cursor: "pointer" }}
         >
@@ -170,28 +170,28 @@ const PixTransferValue = () => {
           placeholder="Digite o valor"
           value={valor}
           onChange={handleInput}
-          className="pixtv-input"
+          className={styles.pixtvInput}
           maxLength={9}
           autoFocus={valor === ""}
         />
-        {error && <div className="pixtv-error">{error}</div>}
+        {error && <div className={styles.pixtvError}>{error}</div>}
       </form>
 
-      <hr className="pixtv-divider" />
+  <hr className={styles.pixtvDivider} />
 
       {/* Pagando com */}
-      <div className="pixtv-section">
-        <p className="pixtv-label">Pagando com</p>
-        <div className="pixtv-cards">
-          <div className="pixtv-card selected">
-            <p className="pixtv-card-title">Saldo PlayBank</p>
-            <p className="pixtv-card-sub">
+      <div className={styles.pixtvSection}>
+        <p className={styles.pixtvLabel}>Pagando com</p>
+        <div className={styles.pixtvCards}>
+          <div className={`${styles.pixtvCard} ${styles.selected}`}>
+            <p className={styles.pixtvCardTitle}>Saldo PlayBank</p>
+            <p className={styles.pixtvCardSub}>
               Atual: {saldo !== null ? formatMoneyDisplay(saldo) : "..."}
             </p>
           </div>
-          <div className="pixtv-card">
-            <p className="pixtv-card-title">Cartão PlayBank</p>
-            <p className="pixtv-card-sub">
+          <div className={styles.pixtvCard}>
+            <p className={styles.pixtvCardTitle}>Cartão PlayBank</p>
+            <p className={styles.pixtvCardSub}>
               Limite: {credito !== null ? formatMoneyDisplay(credito) : "..."}
             </p>
           </div>
@@ -199,7 +199,7 @@ const PixTransferValue = () => {
       </div>
 
       {/* Aba Destinatário */}
-      <div className="pixtv-userinfo">
+      <div className={styles.pixtvUserinfo}>
         <h3>Destinatário</h3>
         <p>
           <b>Nome:</b> {contact.nomeCompleto || contact.name}
@@ -216,11 +216,11 @@ const PixTransferValue = () => {
       </div>
 
       {/* Botão fixo */}
-      <div className="pixtv-footer">
+      <div className={styles.pixtvFooter}>
         <button
           type="submit"
           onClick={handleSubmit}
-          className="pixtv-btn"
+          className={styles.pixtvBtn}
           disabled={loading}
         >
           Continuar com saldo
@@ -229,8 +229,8 @@ const PixTransferValue = () => {
 
       {/* Modal */}
       {showModal && (
-        <div className="pixtransfervalue-modal-bg">
-          <div className="pixtransfervalue-modal">
+        <div className={styles.pixtransfervalueModalBg}>
+          <div className={styles.pixtransfervalueModal}>
             <h3>Confirmar transferência?</h3>
             <p>
               Valor: <b>{formatMoneyDisplay(valor)}</b>
@@ -238,17 +238,17 @@ const PixTransferValue = () => {
             <p>
               Para: <b>{contact.nomeCompleto || contact.name}</b>
             </p>
-            <div className="pixtransfervalue-modal-btns">
+            <div className={styles.pixtransfervalueModalBtns}>
               <button
                 onClick={handleConfirm}
-                className="pixtransfervalue-btn"
+                className={styles.pixtransfervalueBtn}
                 disabled={loading}
               >
                 Confirmar
               </button>
               <button
                 onClick={() => setShowModal(false)}
-                className="pixtransfervalue-btn"
+                className={styles.pixtransfervalueBtn}
                 style={{ background: "#888" }}
               >
                 Cancelar

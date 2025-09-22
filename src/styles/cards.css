@@ -1,0 +1,107 @@
+.cards-page {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+.cards-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cards-header h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Seções */
+.section-title {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+/* Item do cartão */
+.card-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+}
+
+.card-item:last-child {
+  border-bottom: none;
+}
+
+.card-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-number {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Tag (carteira digital, assinaturas, delivery) */
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.tag-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+}
+
+/* Criar novo */
+.create-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.plus-icon {
+  width: 18px;
+  height: 18px;
+}

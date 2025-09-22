@@ -1,0 +1,98 @@
+.container {
+  padding: 24px;
+  font-family: 'Roboto Mono', monospace;
+  color: #1a002a;
+  background-color: #fff;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5500aa; /* roxo escuro */
+  margin-bottom: 16px;
+}
+
+.cardInvest {
+  background-color: #330066;
+  border-radius: 12px;
+  padding: 24px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.totalInvestido {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.valor {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.buttonPainel {
+  background: linear-gradient(90deg, #9a36e8, #e633b0);
+  border: none;
+  border-radius: 24px;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.navButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.navButton {
+  flex: 1;
+  margin: 0 4px;
+  background-color: #330066;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.searchBox {
+  margin-bottom: 24px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.chartWrapper {
+  margin-bottom: 24px;
+}
+
+.newsSection {
+  margin-bottom: 24px;
+}
+
+.newsTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #5500aa;
+  margin-bottom: 16px;
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}

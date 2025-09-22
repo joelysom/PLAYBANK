@@ -1,0 +1,116 @@
+/* cardstyle.css */
+
+/* Cabeçalho */
+.header {
+  width: 100%;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 42px;
+  height: auto;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn img {
+  width: 26px;
+  height: 26px;
+}
+
+/* Título */
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin: 12px 0 22px 0;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+/* Preview do cartão */
+.card-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.card-img {
+  width: 280px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+/* Botões de opções */
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.opt-btn {
+  background: #2a0a40;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.opt-btn:hover {
+  background: #3a1455;
+}
+
+/* Seção de sugestões */
+.suggestions {
+  width: 100%;
+  padding: 0 24px;
+}
+
+.suggest-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.suggest-subtitle {
+  font-size: 13px;
+  color: #ddd;
+  margin-bottom: 18px;
+}
+
+/* Grid de sugestões */
+.suggest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.suggest-card {
+  background: linear-gradient(135deg, #2d0a44, #1a002a);
+  border-radius: 12px;
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.sug-img {
+  width: 64px;
+  height: auto;
+}

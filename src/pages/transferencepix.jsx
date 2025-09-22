@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import "../styles/transferencepix.css";
+import styles from "../styles/transferencepix.module.css";
 import { FaArrowLeft, FaUserFriends, FaClock, FaSearch } from "react-icons/fa";
 import { getFirestore, collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
 import { useAuth } from "../context/AuthContext.jsx";
@@ -71,23 +71,23 @@ const TransferencePix = () => {
   };
 
   return (
-    <div className="transferencepix">
+  <div className={styles.transferencepix}>
       {/* Header */}
-      <div className="tp-header">
-        <button className="tp-back" onClick={() => navigate('/pix')}>
+      <div className={styles.tpHeader}>
+        <button className={styles.tpBack} onClick={() => navigate('/pix')}>
           <FaArrowLeft />
         </button>
       </div>
 
       {/* Campo de busca */}
-      <div className="tp-search-section">
+      <div className={styles.tpSearchSection}>
         <h2>Para quem você quer transferir?</h2>
-        <div className="tp-search-wrapper">
-          <FaSearch className="tp-search-icon" />
+        <div className={styles.tpSearchWrapper}>
+          <FaSearch className={styles.tpSearchIcon} />
           <input
             type="text"
             placeholder="Nome, CPF/CNPJ ou chave Pix"
-            className="tp-search"
+            className={styles.tpSearch}
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
@@ -96,14 +96,14 @@ const TransferencePix = () => {
 
       {/* Recent contacts */}
       {recentContacts.length > 0 && (
-        <div className="tp-frequent">
-          <p className="tp-section-title">
-            <FaClock className="tp-icon" /> Seus contatos recentes
+        <div className={styles.tpFrequent}>
+          <p className={styles.tpSectionTitle}>
+            <FaClock className={styles.tpIcon} /> Seus contatos recentes
           </p>
-          <div className="tp-frequent-list">
+          <div className={styles.tpFrequentList}>
             {recentContacts.map((contact, idx) => (
-              <div key={contact.uid || idx} className="tp-contact-circle" onClick={() => handleSelectContact(contact)} style={{cursor: 'pointer'}}>
-                <div className="tp-avatar">{(contact.apelido || contact.name || contact.email || "U").split(" ").map(n => n[0]).join('').slice(0,2).toUpperCase()}</div>
+              <div key={contact.uid || idx} className={styles.tpContactCircle} onClick={() => handleSelectContact(contact)} style={{cursor: 'pointer'}}>
+                <div className={styles.tpAvatar}>{(contact.apelido || contact.name || contact.email || "U").split(" ").map(n => n[0]).join('').slice(0,2).toUpperCase()}</div>
                 <span>{contact.name}</span>
               </div>
             ))}
@@ -112,14 +112,14 @@ const TransferencePix = () => {
       )}
 
       {/* All contacts */}
-      <div className="tp-all">
-        <p className="tp-section-title">
-          <FaUserFriends className="tp-icon" /> Todos os seus contatos
+      <div className={styles.tpAll}>
+        <p className={styles.tpSectionTitle}>
+          <FaUserFriends className={styles.tpIcon} /> Todos os seus contatos
         </p>
-        <div className="tp-all-list">
+        <div className={styles.tpAllList}>
           {filteredContacts.map((contact, idx) => (
-            <div key={contact.uid || idx} className="tp-all-item" onClick={() => handleSelectContact(contact)} style={{cursor: 'pointer'}}>
-              <div className="tp-avatar">{contact.initials}</div>
+            <div key={contact.uid || idx} className={styles.tpAllItem} onClick={() => handleSelectContact(contact)} style={{cursor: 'pointer'}}>
+              <div className={styles.tpAvatar}>{contact.initials}</div>
               <span>{contact.name}</span>
             </div>
           ))}

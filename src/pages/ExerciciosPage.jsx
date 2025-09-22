@@ -127,8 +127,10 @@ const PaginaExercicios = () => {
           objectFit: 'contain',
           position: 'relative',
           right: '20px',
-          bottom: '10px'
+          bottom: '10px',
+          cursor: 'pointer'
         }}
+        onClick={() => navigate('/games')}
       />
     </div>
   </div>

@@ -12,6 +12,12 @@ import PixTransferValue from "./pages/PixTransferValue";
 import FaturaPage from "./pages/FaturaPage";
 import ExerciciosPage from "./pages/ExerciciosPage";
 import BlackCard from "./pages/blackcard";
+import Cards from "./pages/cards";
+import CardStyle from "./pages/cardstyle";
+import StockDashboard from "./pages/stockdashboard";
+import InvestDashboard from "./pages/InvestDashboard";
+import GamesPage from "./pages/games";
+import Dashboard from "./components/dashboard";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext.jsx";
@@ -38,6 +44,21 @@ function App() {
             <Route path="/fatura" element={<FaturaPage />} />
             <Route path="/exercicios" element={<ExerciciosPage />} />
             <Route path="/blackcard" element={<BlackCard />} />
+            <Route path="/cards" element={<Cards />} />
+            <Route path="/cardstyle" element={<CardStyle />} />
+            <Route path="/stockdashboard" element={
+              <>
+                <StockDashboard />
+                <Dashboard />
+              </>
+            } />
+            <Route path="/investdashboard" element={
+              <>
+                <InvestDashboard />
+                <Dashboard />
+              </>
+            } />
+            <Route path="/games" element={<GamesPage />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
           <ToastContainer
